@@ -6,6 +6,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(email);
+    console.log(password);
+    setEmail("");
+    setPassword("");
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white p-4">
@@ -34,6 +38,10 @@ const Login = () => {
               Email Address
             </label>
             <input
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               required
               type="email"
               placeholder="you@example.com"
@@ -44,6 +52,10 @@ const Login = () => {
           <div>
             <label className="text-sm text-gray-300 mb-2 block">Password</label>
             <input
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               required
               type="password"
               placeholder="Enter your password"
